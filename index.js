@@ -12,4 +12,12 @@ function createCircle(radius) {
 
 const circle = createCircle(1);
 
+//constructor function
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function () {
+    console.log("hi");
+  };
+}
 
+const another = new Circle(1);
