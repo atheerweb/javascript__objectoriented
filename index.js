@@ -1,5 +1,3 @@
-circle.draw();
-
 //factory function
 function createCircle(radius) {
   return {
@@ -13,11 +11,17 @@ function createCircle(radius) {
 const circle = createCircle(1);
 
 //constructor function
-function Circle(radius) {
-  this.radius = radius;
-  this.draw = function () {
-    console.log("hi");
-  };
+function Circle() {
+  let radius;
+  Object.defineProperty(this, "radius", {
+    get: function () {
+      return radius;
+    },
+    set: function (value) {
+      radius = value;
+    },
+  });
 }
 
-const another = new Circle(1);
+const another = new Circle();
+
